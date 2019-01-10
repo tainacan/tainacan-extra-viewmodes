@@ -73,14 +73,15 @@ add_action( 'after_setup_theme', function() {
 } );
 
 add_action( 'wp_print_scripts', function() {
-	wp_enqueue_style('tainacan-extra-viewmodes-view-mode-mosaic', __DIR__ . '/css/_view-mode-mosaic.css'); 
-	wp_enqueue_style('tainacan-extra-viewmodes-view-mode-frame', __DIR__ . '/css/_view-mode-frame.css'); 
-	wp_enqueue_style('tainacan-extra-viewmodes-view-mode-gallery', __DIR__ . '/css/_view-mode-gallery.css'); 
-	wp_enqueue_style('tainacan-extra-viewmodes-view-mode-books', __DIR__ . '/css/_view-mode-books.css'); 
-	wp_enqueue_style('tainacan-extra-viewmodes-view-mode-polaroid', __DIR__ . '/css/_view-mode-polaroid.css'); 
-	wp_enqueue_style('tainacan-extra-viewmodes-view-mode-document', __DIR__ . '/css/_view-mode-document.css'); 
-	wp_enqueue_style('tainacan-extra-viewmodes-view-mode-albums', __DIR__ . '/css/_view-mode-albums.css'); 
-	wp_enqueue_style('tainacan-extra-viewmodes-view-mode-profile', __DIR__ . '/css/_view-mode-profile.css'); 
+	$baseurl =  plugins_url('', __FILE__);
+	wp_enqueue_style('tainacan-extra-viewmodes-view-mode-mosaic', $baseurl . '/css/_view-mode-mosaic.css');
+	wp_enqueue_style('tainacan-extra-viewmodes-view-mode-frame', $baseurl  . '/css/_view-mode-frame.css'); 
+	wp_enqueue_style('tainacan-extra-viewmodes-view-mode-gallery', $baseurl  . '/css/_view-mode-gallery.css'); 
+	wp_enqueue_style('tainacan-extra-viewmodes-view-mode-books', $baseurl  . '/css/_view-mode-books.css'); 
+	wp_enqueue_style('tainacan-extra-viewmodes-view-mode-polaroid', $baseurl  . '/css/_view-mode-polaroid.css'); 
+	wp_enqueue_style('tainacan-extra-viewmodes-view-mode-document', $baseurl  . '/css/_view-mode-document.css'); 
+	wp_enqueue_style('tainacan-extra-viewmodes-view-mode-albums', $baseurl  . '/css/_view-mode-albums.css'); 
+	wp_enqueue_style('tainacan-extra-viewmodes-view-mode-profile', $baseurl  . '/css/_view-mode-profile.css'); 
 } );
 
 function tainacan_evm_load_plugin_textdomain() {

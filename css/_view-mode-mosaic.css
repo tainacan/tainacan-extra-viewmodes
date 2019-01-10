@@ -13,6 +13,9 @@
 @media only screen and (min-width: 992px) {
     .tainacan-mosaic-container { column-count: 4; }
 }
+@media only screen and (min-width: 1366px) {
+    .tainacan-mosaic-container { column-count: 5; }
+}
 .tainacan-mosaic-container .tainacan-mosaic {
     padding: 0px;
     text-align: center;
