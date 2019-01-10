@@ -1,0 +1,46 @@
+.tainacan-mosaic-container {
+    min-height: 50vh;
+    padding: 0;
+    column-gap: 0;
+    column-count: 1;
+}
+@media only screen and (min-width: 576px) {
+    .tainacan-mosaic-container { column-count: 2; }
+}
+@media only screen and (min-width: 768px) {
+    .tainacan-mosaic-container { column-count: 3; }
+}
+@media only screen and (min-width: 992px) {
+    .tainacan-mosaic-container { column-count: 4; }
+}
+.tainacan-mosaic-container .tainacan-mosaic {
+    padding: 0px;
+    text-align: center;
+}
+.tainacan-mosaic-container .tainacan-mosaic img {
+    width: 100%;
+    height: auto;
+}
+
+.tainacan-mosaic-container .tainacan-mosaic .metadata-title {
+    flex-shrink: 0;
+    border-top-right-radius: 5px;
+    font-size: 0.875rem;
+    margin-bottom: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 0.75rem 1.5rem;
+    text-align: center;
+    position: absolute;
+    opacity: 0;
+    background-color: rgba(255,255,255,0.85);
+    transition: opacity 0.5s;
+    margin-top: -45px;         
+}
+.tainacan-mosaic-container .tainacan-mosaic:hover .metadata-title {
+    opacity: 1;
+}
+
+
+

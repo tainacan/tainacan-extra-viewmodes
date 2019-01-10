@@ -1,0 +1,57 @@
+.tainacan-profile-container {
+    min-height: 50vh;
+    padding: 30px 4.166666667%;
+    background-color: #f5f5f5;
+}
+.tainacan-profile-container .tainacan-profile {
+    padding: 12px;
+    margin: 24px;
+    border: 1px solid #e3e3e3;
+    background: white;
+    border-radius: 5px;
+}
+.tainacan-profile-container .tainacan-profile:hover .media .media-body .metadata-title,
+.tainacan-profile-container .tainacan-profile:hover .media .media-body .metadata-label,
+.tainacan-profile-container .tainacan-profile:hover .media .media-body .metadata-value {
+    white-space: normal;
+}
+
+.tainacan-profile-container .tainacan-profile img {
+    width: 130px;
+    height: auto;
+    border-radius: 70px;
+}
+.tainacan-profile-container .tainacan-profile .media .media-body {
+    flex: 1;
+    font-size: 0.6875rem;
+    color: gray;
+    overflow: hidden;
+}
+.tainacan-profile-container .tainacan-profile .media .media-body .metadata-title {
+    flex-shrink: 0;
+    font-size: 0.875rem;
+    margin-bottom: 0.875rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.tainacan-profile-container .tainacan-profile .media .media-body .metadata-label {
+    font-size: 0.75rem;
+    line-height: 1.0;
+    margin-bottom: 0.2rem;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.tainacan-profile-container .tainacan-profile .media .media-body .metadata-value {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+
+
+
+

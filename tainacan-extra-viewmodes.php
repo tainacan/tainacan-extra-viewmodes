@@ -69,12 +69,22 @@ add_action( 'after_setup_theme', function() {
 		'dynamic_metadata' => true,
 		'template' => __DIR__ . '/templates/view-mode-profile.php',
 	]);
-	
 
 } );
 
+add_action( 'wp_print_scripts', function() {
+	wp_enqueue_style('tainacan-extra-viewmodes-view-mode-mosaic', __DIR__ . '/css/_view-mode-mosaic.css'); 
+	wp_enqueue_style('tainacan-extra-viewmodes-view-mode-frame', __DIR__ . '/css/_view-mode-frame.css'); 
+	wp_enqueue_style('tainacan-extra-viewmodes-view-mode-gallery', __DIR__ . '/css/_view-mode-gallery.css'); 
+	wp_enqueue_style('tainacan-extra-viewmodes-view-mode-books', __DIR__ . '/css/_view-mode-books.css'); 
+	wp_enqueue_style('tainacan-extra-viewmodes-view-mode-polaroid', __DIR__ . '/css/_view-mode-polaroid.css'); 
+	wp_enqueue_style('tainacan-extra-viewmodes-view-mode-document', __DIR__ . '/css/_view-mode-document.css'); 
+	wp_enqueue_style('tainacan-extra-viewmodes-view-mode-albums', __DIR__ . '/css/_view-mode-albums.css'); 
+	wp_enqueue_style('tainacan-extra-viewmodes-view-mode-profile', __DIR__ . '/css/_view-mode-profile.css'); 
+} );
+
 function tainacan_evm_load_plugin_textdomain() {
-    load_plugin_textdomain( 'tainacan-extra-viewmodes', FALSE, basename( dirname( __FILE__ ) ) . '/languages/' );
+	load_plugin_textdomain( 'tainacan-extra-viewmodes', FALSE, basename( dirname( __FILE__ ) ) . '/languages/' );
 }
 add_action( 'plugins_loaded', 'tainacan_evm_load_plugin_textdomain' );
 
