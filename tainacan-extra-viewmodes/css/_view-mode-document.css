@@ -25,24 +25,23 @@
 }
 
 .tainacan-document-container .tainacan-document img {
-        width: 130px;
-        height: auto;
+    width: 130px;
+    height: auto;
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.25);
+    border: 1px solid #bbb;
+    position: relative;
+    z-index: 3;
 }
 .tainacan-document-container .tainacan-document .media .paper {
     background: #fff;
     position: relative;
 }
     
-.tainacan-document-container .tainacan-document .media .paper,
-.tainacan-document-container .tainacan-document .media .paper::before,
-.tainacan-document-container .tainacan-document .media .paper::after {
-    box-shadow: 1px 1px 4px rgba(0,0,0,0.25);
-    border: 1px solid #bbb;
-}
-    
 .tainacan-document-container .tainacan-document .media .paper::before,
 .tainacan-document-container .tainacan-document .media .paper::after {
     content: "";
+    box-shadow: 1px 1px 4px rgba(0,0,0,0.25);
+    border: 1px solid #bbb;
     position: absolute;
     height: 96%;
     width: 99%;
@@ -54,14 +53,14 @@
     right: 3px;
     top: -1;
     transform: rotate(-2.5deg);
-    z-index: -1;
+    z-index: 1;
 }
     
 .tainacan-document-container .tainacan-document .media .paper::after {
     top: 4px;
     right: -4px;
     transform: rotate(2.0deg);
-    z-index: -2;
+    z-index: 0;
 }
         
 .tainacan-document-container .tainacan-document .media .media-body {
@@ -94,4 +93,25 @@
             overflow: hidden;
 }
 
+.tainacan-document-container .tainacan-document .media .media-body .metadata-value .multivalue-separator {
+    color: #cbcbcb;
+    margin: 0 8px;    
+}
+.tainacan-document-container .tainacan-document .media .media-body .metadata-value .hierarchy-separator {
+    color: #cbcbcb;  
+}
+.tainacan-document-container .tainacan-document .media .media-body .metadata-value .metadata-type-compound .multivalue-separator,
+.tainacan-document-container .tainacan-document .media .media-body .metadata-value .metadata-type-textarea .multivalue-separator {
+    display: block;
+    max-height: 1px;
+    width: 35px;
+    background: #cbcbcb;
+    content: none;
+    color: transparent;
+    margin: 0.875rem auto;
+}
+.tainacan-document-container .tainacan-document .media .media-body .metadata-value .tainacan-compound-group {
+    padding-left: 1.5rem;
+    border-left: 1px solid #f2f2f2;
+}
 

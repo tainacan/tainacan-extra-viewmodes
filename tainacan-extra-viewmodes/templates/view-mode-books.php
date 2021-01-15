@@ -1,15 +1,14 @@
 <?php if (have_posts()):  ?>
 
-    <div class="tainacan-albums-container">
+    <div class="tainacan-books-container">
 
         <div class="row no-gutters">
         <?php while (have_posts()): the_post(); ?>
             <div class="col col-sm-12 col-md-6 col-lg-4 col-xl-3">
-                <div class="tainacan-album">
-                    <a href="<?php the_permalink(); ?>">              
-                        <div class="cd" style="background-image: url('<?php the_post_thumbnail_url('medium'); ?>')"></div>                          
+                <div class="tainacan-book">
+                    <a href="<?php the_permalink(); ?>">
                         <?php if ( has_post_thumbnail() ): ?>
-                            <?php the_post_thumbnail('tainacan-medium'); ?> 
+                            <?php the_post_thumbnail('tainacan-medium-full'); ?> 
                         <?php else: ?>
                             <?php echo '<img alt="Thumbnail placeholder" src="'.get_stylesheet_directory_uri().'/assets/images/thumbnail_placeholder.png">'?>
                         <?php endif; ?>  
@@ -25,7 +24,16 @@
     </div>
 
 <?php else: ?>
-    <div class="tainacan-albums-container">
-        Nenhum item encontrado
+    <div class="tainacan-books-container">
+        <section class="section">
+            <div class="content has-text-gray4 has-text-centered">
+                <p>
+                    <span class="icon is-large">
+                        <i class="tainacan-icon tainacan-icon-48px tainacan-icon-items"></i>
+                    </span>
+                </p>
+                <p><?php echo__('No item found', 'tainacan-extra-viewmodes') ?></p>
+            </div>
+        </section>
     </div>
 <?php endif; ?>
