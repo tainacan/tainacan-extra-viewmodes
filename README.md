@@ -1,4 +1,4 @@
-# Tainacan Extra View Modes Demo
+# Tainacan Extra View Modes (Demo Plugin)
 
 This repo contains a plugin that registers a list of Extra View Modes for Tainacan [Tainacan](https://tainacan.org).
 
