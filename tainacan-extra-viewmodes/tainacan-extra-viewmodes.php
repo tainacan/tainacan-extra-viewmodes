@@ -103,7 +103,7 @@ function tainacan_extra_viewmodes_register_components($helper) {
         // Registering the Vue Component
         $handle = 'tainacan-extra-viewmode';
         $component_script_url = plugin_dir_url(__FILE__) . 'components/extra-view-mode.bundle.js';
-		$helper->register_vuejs_component($handle, $component_script_url, [ 'public' => true, 'deps' => ['jquery'] ], null, true);
+		$helper->register_vuejs_component($handle, $component_script_url, [ 'public' => true, 'deps' => ['wp-i18n'] ], null, true);
 		
 		// Registering the view mode
         tainacan_register_view_mode('extra-test', [

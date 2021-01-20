@@ -75,7 +75,7 @@
                                         v-html="item.metadata != undefined && collectionId ? renderMetadata(item.metadata, column) : (item.title ? item.title :`<span class='has-text-gray3 is-italic'>` + $i18n.get('label_value_not_provided') + `</span>`)" />   
                             </h3>
                             <a target="_blank" :href="getItemLink(item.url, index)">
-                                <span>Ver página do item</span>
+                                <span>{{ __('View item on page', 'tainacan-extra-viewmodes') }}</span>
                                 <span class="icon">
                                     <i class="tainacan-icon tainacan-icon-1-125em tainacan-icon-see" />
                                 </span>
@@ -92,7 +92,7 @@
                         <div 
                                 @click="showMetadataPanel = !showMetadataPanel"
                                 class="list-metadata__header">
-                            <span style="cursor: pointer;">{{ showMetadataPanel ? 'Esconder metadados' : 'Mostrar metadados' }}</span>
+                            <span style="cursor: pointer;">{{ showMetadataPanel ? __('Hide metadata', 'tainacan-extra-viewmodes') : __('Show metadata', 'tainacan-extra-viewmodes') }}</span>
                             <span class="icon">
                                 <i 
                                         class="tainacan-icon tainacan-icon-1-25em"
@@ -101,7 +101,7 @@
                             <a 
                                     v-if="isSlideshowViewModeEnabled"
                                     @click.prevent="starSlideshowFromHere(index)">
-                                <span>Ver Documento em Tela Cheia</span>
+                                <span>{{ __('View Document on fullscreen', 'tainacan-extra-viewmodes') }}</span>
                                 <span class="icon">
                                     <i class="tainacan-icon tainacan-icon-1-125em tainacan-icon-viewgallery" />
                                 </span>
@@ -140,7 +140,7 @@ export default {
             thumbPlaceholderPath: tainacan_plugin.base_url + '/assets/images/placeholder_square.png',
             isSlideshowViewModeEnabled: false,
             showMetadataPanel: false,
-            masonryCols: {default: 7, 1600: 6, 1400: 5, 1200: 4, 960: 3, 560: 2, 344: 1}
+            masonryCols: { default: 7, 1600: 6, 1400: 5, 1200: 4, 960: 3, 560: 2, 344: 1 }
         }
     },
     props: {
@@ -183,6 +183,9 @@ export default {
         }
     },
     computed: {
+        __() {
+            return wp.i18n ? wp.i18n.__ : ((str, ctx) => str)
+        },
         queries() {
             let currentQueries = JSON.parse(JSON.stringify(this.$route.query));
             if (currentQueries) {
