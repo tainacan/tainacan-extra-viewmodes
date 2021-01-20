@@ -115,3 +115,84 @@
     border-left: 1px solid #f2f2f2;
 }
 
+
+.tainacan-document-container .tainacan-document .metadata-title {
+    flex-shrink: 0;
+    font-size: 0.875rem;
+    margin-bottom: 0;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    padding-bottom: 1.0rem;
+    text-align: center;
+}   
+.tainacan-document-container .tainacan-document .list-metadata {
+    flex: 1;
+    font-size: 0.6875rem;
+    color: gray;
+    overflow: hidden;
+    display: grid;
+}
+.tainacan-document-container .tainacan-document .list-metadata .metadata-label {
+    font-size: 0.75rem;
+    line-height: 1.0;
+    margin-bottom: 0.2rem;
+}
+
+.tainacan-document-container .tainacan-document .list-metadata .metadata-value {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 260px;
+}
+
+.tainacan-document-container .metadata-value .tainacan-compound-group {
+    margin-left: 2px;
+    padding-left: 0.875em;
+    border-left: 1px solid var(--tainacan-gray2);
+}
+.tainacan-document-container .metadata-value .tainacan-compound-group .tainacan-compound-metadatum .label {
+    margin-bottom: 0.25em;
+    font-size: 1em;
+    color: var(--tainacan-info-color);
+}
+.tainacan-document-container .metadata-value .tainacan-compound-group .tainacan-compound-metadatum p {
+    margin-bottom: 0.75em;
+    font-size: 1em;
+}
+.tainacan-document-container .metadata-value .tainacan-compound-group .multivalue-separator {
+    display: block;
+    max-height: 1px;
+    width: 80px;
+    background: var(--tainacan-gray2);
+    content: none;
+    color: transparent;
+    margin: 1em auto 1em -0.875em;
+}
+.tainacan-document-container .metadata-type-textarea .multivalue-separator ,
+.tainacan-document-container .metadata-type-compound .multivalue-separator {
+    display: block;
+    max-height: 1px;
+    width: 80px;
+    background: var(--tainacan-gray3);
+    content: none;
+    color: transparent;
+    margin: 1em auto;
+}
+.tainacan-document-container .metadata-type-compound {
+    padding-left: 15px;
+    margin-left: 15px;
+    border-left: 1px solid var(--tainacan-gray2);
+}
+.tainacan-document-container .metadata-type-compound .tainacan-metadatum {
+    margin-bottom: 0.75em;
+}
+.tainacan-document-container .metadata-type-compound .tainacan-metadatum .label:not(:last-child) {
+    font-size: 1em;
+    margin-bottom: 0.3em;
+    color: var(--tainacan-info-color);
+    font-weight: normal;
+}
+.tainacan-document-container .metadata-type-compound .tainacan-metadatum p:not(:last-child) {
+    margin-bottom: 0.75em;
+}

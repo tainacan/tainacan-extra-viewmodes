@@ -2,7 +2,7 @@
     <div 
             ref="grid-gallery"
             id="grid-gallery" 
-            class="test-item-view-mode grid-gallery">
+            class="gallery-view-mode grid-gallery">
 
         <section class="grid-wrap">
             <!-- Empty result placeholder -->

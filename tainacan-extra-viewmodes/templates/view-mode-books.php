@@ -5,7 +5,13 @@
         <div class="row no-gutters">
         <?php while (have_posts()): the_post(); ?>
             <div class="col col-sm-12 col-md-6 col-lg-4 col-xl-3">
-                <div class="tainacan-book">
+                <div class="tainacan-book" style="background-image: url('<?php 
+                 if ( has_post_thumbnail() ) {
+                    echo esc_url(the_post_thumbnail_url('tainacan-medium-full'));
+                 } else {
+                    echo get_stylesheet_directory_uri() . '/assets/images/thumbnail_placeholder.png';
+                 }
+                ?>'), linear-gradient(90deg,#aaa 5px,#ccc 12px,#f2f2f2 20px), linear-gradient(0deg,#ddd 0px,#f2f2f2 6px)">
                     <a href="<?php the_permalink(); ?>">
                         <?php if ( has_post_thumbnail() ): ?>
                             <?php the_post_thumbnail('tainacan-medium-full'); ?> 
