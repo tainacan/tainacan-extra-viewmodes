@@ -134,7 +134,7 @@
 import qs from 'qs';
 
 export default {
-    name: "ViewModeExtraTest",
+    name: "ViewModeGallery",
     data() {
         return {
             thumbPlaceholderPath: tainacan_plugin.base_url + '/assets/images/placeholder_square.png',

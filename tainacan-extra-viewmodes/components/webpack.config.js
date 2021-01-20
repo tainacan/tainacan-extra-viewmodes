@@ -5,7 +5,7 @@ const VueLoaderPlugin = require("vue-loader/lib/plugin");
 module.exports = {
   output: {
     path: path.resolve(__dirname, ""),
-    filename: "extra-view-mode.bundle.js",
+    filename: "gallery-view-mode.bundle.js",
   },
   module: {
     rules: [

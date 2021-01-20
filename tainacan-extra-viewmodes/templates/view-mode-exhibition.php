@@ -1,11 +1,11 @@
 <?php if (have_posts()):  ?>
 
-    <div class="tainacan-gallery-container">
+    <div class="tainacan-exhibition-container">
 
         <div class="row no-gutters">
         <?php while (have_posts()): the_post(); ?>
             <div class="col col-md-12 col-lg-6 col-xl-4">
-                <div class="tainacan-gallery">                  
+                <div class="tainacan-exhibition">                  
                     <div class="media">
                         
                         <?php if ( tainacan_current_view_displays('thumbnail') ): ?>
@@ -45,7 +45,7 @@
     </div>
 
 <?php else: ?>
-    <div class="tainacan-gallery-container">
+    <div class="tainacan-exhibition-container">
         <section class="section">
             <div class="content has-text-gray4 has-text-centered">
                 <p>

@@ -16,7 +16,7 @@ else
     rm -f $1/tainacan-extra-viewmodes/components/package.json
     rm -f $1/tainacan-extra-viewmodes/components/package-lock.json
     rm -f $1/tainacan-extra-viewmodes/components/*.vue
-    rm -f $1/tainacan-extra-viewmodes/components/extra-view-mode.js
+    rm -f $1/tainacan-extra-viewmodes/components/gallery-view-mode.js
     rm -rf $1/tainacan-extra-viewmodes/components/node_modules
     echo "Done!"
 fi
