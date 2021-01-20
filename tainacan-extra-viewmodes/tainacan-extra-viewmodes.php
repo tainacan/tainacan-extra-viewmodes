@@ -88,6 +88,17 @@ add_action("tainacan-register-vuejs-component", "tainacan_extra_viewmodes_regist
 function tainacan_extra_viewmodes_register_components($helper) {
 
     if ( function_exists( 'tainacan_register_view_mode' ) ) {
+		
+		wp_register_script('modernizr_custom', plugin_dir_url(__FILE__)  . 'components/modernizr.custom.js', [], false, false);
+		wp_enqueue_script('modernizr_custom');
+		wp_register_script('imagesloaded', plugin_dir_url(__FILE__)  . 'components/imagesloaded.pkgd.js', [], false, true);
+		wp_enqueue_script('imagesloaded');
+		wp_register_script('masonry', plugin_dir_url(__FILE__)  . 'components/masonry.pkgd.js', [], false, true);
+		wp_enqueue_script('masonry');
+		wp_register_script('classie', plugin_dir_url(__FILE__)  . 'components/classie.js', [], false, true);
+		wp_enqueue_script('classie');
+		wp_register_script('cbpGridGallery', plugin_dir_url(__FILE__)  . 'components/cbpGridGallery.js', [], false, true);
+		wp_enqueue_script('cbpGridGallery');
 
         // Registering the Vue Component
         $handle = 'tainacan-extra-viewmode';
@@ -98,7 +109,9 @@ function tainacan_extra_viewmodes_register_components($helper) {
         tainacan_register_view_mode('extra-test', [
             'label' 	=> 'Teste',
             'type' 		=> 'component',
-            'component' => 'view-mode-extra-test'
+			'component' => 'view-mode-extra-test',
+			'dynamic_metadata' 	=> true,
+			'implements_skeleton' => true
         ]);
     }
 }
@@ -120,6 +133,7 @@ function tainacan_extra_viewmodes_enqueue_styles() {
 	wp_enqueue_style( 'tainacan-extra-viewmodes-view-mode-document', $baseurl . '/css/_view-mode-document.css' ); 
 	wp_enqueue_style( 'tainacan-extra-viewmodes-view-mode-albums',   $baseurl . '/css/_view-mode-albums.css'   ); 
 	wp_enqueue_style( 'tainacan-extra-viewmodes-view-mode-profile',  $baseurl . '/css/_view-mode-profile.css'  );
+	wp_enqueue_style( 'tainacan-extra-viewmodes-view-mode-test',  $baseurl . '/css/cbpGridGallery.css'  );
 };
 
 ?>
