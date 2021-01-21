@@ -10,13 +10,45 @@ License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 
-A view modes plugin for Tainacan, which registers a list of extra view modes that may be used to display your items list.
+A view modes plugin for Tainacan, which registers a list of 8 extra view modes that may be used to display your items list.
  
 == Description ==
  
 [Tainacan](https://tainacan.org/) is an open-source, powerful and flexible digital repository platform for WordPress. 
 
-This plugin expands the [Tainacan plugin](https://wordpress.org/plugins/tainacan/) functionality by adding support to extra view modes besides the default ones (Masonry, Cards, Records, Table and List). The view modes display your items list giving different style to each item. 
+This plugin expands the [Tainacan plugin](https://wordpress.org/plugins/tainacan/) functionality by adding support to 8 extra view modes besides the default ones (Masonry, Cards, Records, Table and List). The view modes display your items list giving different style to each item:
+
+=== Mosaic ===
+
+A simple and marginless mosaic of item thumbnails.
+
+=== Frame === 
+
+A centered aligned, framed thumbnails view, like gallery expositions.
+
+=== Exhibition === 
+
+A framed record view, where image and metadata are expanded on hover.
+
+=== Books === 
+
+A book cover view, made for library visualizations.
+
+=== Polaroid === 
+
+A framed picture view, similar to polaroid photographs.
+
+=== Document === 
+
+Records with stacked papers style, for displaying published research.
+
+=== Albums === 
+
+Thumbnails displayed as album covers with a disk inside.
+
+=== Gallery === 
+
+A masonry view mode that displays two metadata and opens a slider lightbox.
 
 == Installation ==
  
@@ -40,4 +72,11 @@ This plugin will only work with [Tainacan plugin](https://wordpress.org/plugins/
 
 == Screenshots ==
  
-1. Frame View Mode
+1. Mosaic - A simple and marginless mosaic of item thumbnails.
+2. Frame - A centered aligned, framed thumbnails view, like gallery expositions.
+3. Exhibition - A framed record view, where image and metadata are expanded on hover.
+4. Books - A book cover view, made for library visualizations.
+5. Polaroid - A framed picture view, similar to polaroid photographs.
+6. Document - Records with stacked papers style, for displaying published research.
+7. Albums - Thumbnails displayed as album covers with a disk inside.
+8. Gallery - A masonry view mode that displays two metadata and opens a slider lightbox.
