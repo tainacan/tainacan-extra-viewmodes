@@ -50,6 +50,10 @@
 	float: left;
 }
 
+.gallery-view-mode .skeleton {
+	margin-bottom: 24px;
+}
+
 .gallery-view-mode .grid figure {
 	padding: 15px;
 	-webkit-transition: opacity 0.2s;

@@ -15,7 +15,7 @@
                             <i class="tainacan-icon tainacan-icon-36px tainacan-icon-items" />
                         </span>
                     </p>
-                    <p>{{ 'info_no_item_found' }}</p>
+                    <p>{{ __('No item found', 'tainacan-extra-viewmodes') }}</p>
                 </div>
             </section>
 
@@ -50,11 +50,7 @@
                                         v-html="item.metadata != undefined && collectionId ? renderMetadata(item.metadata, column) : (item.title ? item.title :`<span class='has-text-gray3 is-italic'>` + $i18n.get('label_value_not_provided') + `</span>`)" />   
                             </h3>
                             <div>
-                                <p 
-                                        v-for="(column, metadatumIndex) in displayedMetadata"
-                                        :key="metadatumIndex"
-                                        v-if="column.display && column.metadata_type_object != undefined && (column.metadata_type_object.related_mapped_prop == 'description')"
-                                        v-html="item.metadata != undefined && collectionId ? renderMetadata(item.metadata, column) : (item.description ? item.description :`<span class='has-text-gray3 is-italic'>` + $i18n.get('label_value_not_provided') + `</span>`)" />   
+                                <p v-html="renderTheSecondaryMetadata(item)" />   
                             </div>
                         </figcaption>
                     </figure>
@@ -217,6 +213,14 @@ export default {
                 return '';
             else
                 return metadata.value_as_html;
+        },
+        renderTheSecondaryMetadata(item) {
+            let metadataHtml = '';
+            for (let i = 1; i < this.displayedMetadata.length; i++) {
+                if (this.displayedMetadata[i].display && this.displayedMetadata[i].metadata_type_object != undefined && (this.displayedMetadata[i].metadata_type_object.related_mapped_prop != 'title') )
+                    return this.renderMetadata(item.metadata, this.displayedMetadata[i]);
+            }
+            return metadataHtml;
         },
         randomHeightForMasonryItem() {
             let min = 120;
