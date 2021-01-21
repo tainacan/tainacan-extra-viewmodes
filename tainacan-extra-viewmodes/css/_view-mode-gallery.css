@@ -51,11 +51,11 @@
 }
 
 .gallery-view-mode .skeleton {
-	margin-bottom: 24px;
+	margin-bottom: 20px;
 }
 
 .gallery-view-mode .grid figure {
-	padding: 15px;
+	padding: 12px;
 	-webkit-transition: opacity 0.2s;
 	transition: opacity 0.2s;
 	cursor: zoom-in;

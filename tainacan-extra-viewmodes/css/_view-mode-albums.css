@@ -35,11 +35,11 @@
     opacity: 1;
 } 
 .tainacan-albums-container .tainacan-album:hover .cd {
-    -webkit-transform:  translateX(80px) rotate(185deg);
-    -moz-transform:  translateX(50px) rotate(185deg);
-    -ms-transform:  translateX(50px) rotate(185deg);
-    -o-transform:  translateX(50px) rotate(185deg);
-    transform:  translateX(50px) rotate(185deg);
+    -webkit-transform:  translateX(60px) rotate(185deg);
+    -moz-transform:  translateX(60px) rotate(185deg);
+    -ms-transform:  translateX(60px) rotate(185deg);
+    -o-transform:  translateX(60px) rotate(185deg);
+    transform:  translateX(60px) rotate(185deg);
     box-shadow: 2px 0px 15px -6px #111;
 }
 .tainacan-albums-container .tainacan-album:hover img {
@@ -58,15 +58,15 @@
 }
 .tainacan-albums-container .tainacan-album .cd {
     position:absolute;
-    width: 180px;
-    height: 180px;
+    width: 172px;
+    height: 172px;
     z-index: 0;
     display: block;
     -webkit-transition: all .25s ease-out;
     transition: all .25s ease-out;
     background-size: cover;
     border-radius: 150px;
-    margin: 12px;
+    margin: 16px;
     background-blend-mode: multiply;
     background-color: #ccc;
     box-shadow: 0px 0px 0px 0px #111;
