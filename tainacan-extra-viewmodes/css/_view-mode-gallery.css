@@ -171,7 +171,7 @@
 	display: block;
 	width: auto;
 	height: auto;
-	max-height: 612px;
+	max-height: 522px;
 	max-width: 100%;
 	margin: 0 auto;
 }
@@ -247,6 +247,84 @@
 	content: "close";
 }
 
+/* Metadata list */
+.gallery-view-mode .slideshow .list-metadata {
+	padding: 80px var(--tainacan-container-padding, 25px) var(--tainacan-container-padding, 25px) var(--tainacan-container-padding, 25px);
+	flex: 1;
+	font-size: 1em;
+	color: var(--tainacan-info-color);
+	overflow: hidden;
+	width: 100%;
+	background-color: var(--tainacan-item-hover-background-color, #f2f2f2);
+	border-top: 1px solid #dbdbdb;
+	position: absolute;
+	left: 0;
+	right: 0;
+	transition: bottom 0.3s ease, top 0.3s ease;
+	-moz-column-count: 2;
+	-moz-column-gap: 2em;
+	-moz-column-rule: none;
+	-webkit-column-count: 2;
+	-webkit-column-gap: 2em;
+	-webkit-column-rule: none;
+	column-count: 2;
+	column-gap: 2em;
+	column-rule: none;
+}
+.gallery-view-mode .slideshow .list-metadata.collapsed {
+	top: calc(100% - 50px);
+	bottom: auto;
+}
+.gallery-view-mode .slideshow .list-metadata.expanded {
+	top: auto;
+	bottom: 0;
+}
+.gallery-view-mode .slideshow .list-metadata__header {
+	background-color: var(--tainacan-item-background-color, #ffffff);
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	display: flex;
+	justify-content: space-between;
+	align-items: baseline;
+	height: 50px;
+	padding: 12px var(--tainacan-container-padding, 25px);
+	border-bottom: 1px solid #dbdbdb;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.gallery-view-mode .slideshow .list-metadata__header a {
+	margin-left: auto;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+}
+.gallery-view-mode .slideshow .list-metadata>span {
+	-webkit-column-break-inside: avoid;
+	page-break-inside: avoid;
+	break-inside: avoid;
+	display: block;
+}
+.gallery-view-mode .slideshow .list-metadata .metadata-label {
+	margin: 0 0 0.5em 0;
+	font-size: 0.75em;
+	font-weight: 700;
+	color: var(--tainacan-info-color);
+}
+
+.gallery-view-mode .slideshow .list-metadata .metadata-value {
+	font-size: 0.75em;
+	margin-bottom: 1em;
+	color: var(--tainacan-info-color);
+}
+
+.gallery-view-mode .slideshow .list-metadata .metadata-value span:last-of-type>.metadata-value {
+	margin-bottom: 0px;
+}
+
+
 
 /* Example media queries (reduce number of columns and change slideshow layout) */
 @media screen and (max-width: 100em) {
@@ -302,86 +380,15 @@
 		width: 50%;
 	}
 
-	.gallery-view-mode .list-metadata {
+	.gallery-view-mode .slideshow .list-metadata {
 		-moz-column-count: 1;
 		-webkit-column-count: 1;
 		column-count: 1;
 	}
 }
 
-@media screen and (max-width: 24em) {
+@media screen and (max-width: 23em) {
 	.gallery-view-mode .grid li {
 		width: 100%;
 	}
-}
-
-/* Metadata list */
-.slideshow .list-metadata {
-	padding: 80px var(--tainacan-container-padding, 25px) var(--tainacan-container-padding, 25px) var(--tainacan-container-padding, 25px);
-	flex: 1;
-	font-size: 1em;
-	color: var(--tainacan-info-color);
-	overflow: hidden;
-	width: 100%;
-	background-color: var(--tainacan-item-hover-background-color, #f2f2f2);
-	border-top: 1px solid #dbdbdb;
-	position: absolute;
-	left: 0;
-	right: 0;
-	transition: bottom 0.3s ease, top 0.3s ease;
-	-moz-column-count: 2;
-	-moz-column-gap: 2em;
-	-moz-column-rule: none;
-	-webkit-column-count: 2;
-	-webkit-column-gap: 2em;
-	-webkit-column-rule: none;
-	column-count: 2;
-	column-gap: 2em;
-	column-rule: none;
-}
-.slideshow .list-metadata.collapsed {
-	top: calc(100% - 50px);
-	bottom: auto;
-}
-.slideshow .list-metadata.expanded {
-	top: auto;
-	bottom: 0;
-}
-.slideshow .list-metadata__header {
-	background-color: var(--tainacan-item-background-color, #ffffff);
-	position: absolute;
-	top: 0;
-	left: 0;
-	right: 0;
-	display: flex;
-	justify-content: space-between;
-	align-items: baseline;
-	height: 50px;
-	padding: 12px var(--tainacan-container-padding, 25px);
-	border-bottom: 1px solid #dbdbdb;
-}
-.slideshow .list-metadata__header a {
-	margin-left: auto;
-}
-.slideshow .list-metadata>span {
-	-webkit-column-break-inside: avoid;
-	page-break-inside: avoid;
-	break-inside: avoid;
-	display: block;
-}
-.slideshow .list-metadata .metadata-label {
-	margin: 0 0 0.5em 0;
-	font-size: 0.75em;
-	font-weight: 700;
-	color: var(--tainacan-info-color);
-}
-
-.slideshow .list-metadata .metadata-value {
-	font-size: 0.75em;
-	margin-bottom: 1em;
-	color: var(--tainacan-info-color);
-}
-
-.slideshow .list-metadata .metadata-value span:last-of-type>.metadata-value {
-	margin-bottom: 0px;
 }
