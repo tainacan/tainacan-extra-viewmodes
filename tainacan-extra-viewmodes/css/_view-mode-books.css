@@ -18,7 +18,7 @@
     padding-bottom: 12px;
     border-bottom: 1px solid #555;
     box-shadow: 0px 15px 21px -23px #555, inset 0px -21px 21px -23px #fff;
-    background-image: radial-gradient(11em 7em at bottom, rgba(140,140,140,0.8) 50%, transparent 90%);
+    background-image: radial-gradient(8em 12em at bottom, rgba(140,140,140,0.8) 50%, transparent 90%);
 }
 .tainacan-books-container .col::before { 
     content: '';
@@ -67,7 +67,7 @@
 
 .tainacan-books-container .tainacan-book img {
     vertical-align: middle;
-    width: 258px;
+    width: 200px;
     height: auto;
     position: relative;
     max-width: 100%;

@@ -7,6 +7,10 @@
     padding: 24px;
 }
 
+.tainacan-exhibition-container .tainacan-exhibition .media>a {
+    float: left;
+}
+
 .tainacan-exhibition-container .tainacan-exhibition:hover .media .media-body .list-metadata,
 .tainacan-exhibition-container .tainacan-exhibition:hover .media .media-body .list-metadata .metadata-title,
 .tainacan-exhibition-container .tainacan-exhibition:hover .media .media-body .list-metadata .metadata-label,

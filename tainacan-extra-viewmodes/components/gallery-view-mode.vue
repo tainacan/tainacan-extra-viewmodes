@@ -89,7 +89,7 @@
                                 @click="showMetadataPanel = !showMetadataPanel"
                                 class="list-metadata__header">
                             <span style="cursor: pointer;">{{ showMetadataPanel ? __('Hide metadata', 'tainacan-extra-viewmodes') : __('Show metadata', 'tainacan-extra-viewmodes') }}</span>
-                            <span class="icon">
+                            <span class="icon" style="margin-right: auto;">
                                 <i 
                                         class="tainacan-icon tainacan-icon-1-25em"
                                         :class="showMetadataPanel ? 'tainacan-icon-arrowdown' : 'tainacan-icon-arrowup'" />

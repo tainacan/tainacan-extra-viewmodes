@@ -7,6 +7,7 @@
     margin: 16px;
     border-radius: 5px;
 }
+
 .tainacan-document-container .tainacan-document:hover .media .media-body .metadata-title,
 .tainacan-document-container .tainacan-document:hover .media .media-bod .metadata-label,
 .tainacan-document-container .tainacan-document:hover .media .media-bod .metadata-value {
@@ -35,6 +36,7 @@
 .tainacan-document-container .tainacan-document .media .paper {
     background: #fff;
     position: relative;
+    float: left;
 }
     
 .tainacan-document-container .tainacan-document .media .paper::before,

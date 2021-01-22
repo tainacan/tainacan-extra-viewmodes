@@ -20,6 +20,10 @@
 	height: auto;
 	margin: 0 auto;
 }
+.gallery-view-mode.grid-gallery figcaption {
+	margin: 0;
+	text-align: left;
+}
 
 .gallery-view-mode.grid-gallery figcaption h3 {
 	font-size: 0.9375em;
@@ -50,6 +54,11 @@
 	float: left;
 }
 
+/* Skeleton only */
+.gallery-view-mode .tainacan-masonry-container {
+	margin: 12px auto;
+	padding: 0 1em 1.875em;
+}
 .gallery-view-mode .skeleton {
 	margin-bottom: 20px;
 }
@@ -179,6 +188,8 @@
 .gallery-view-mode .slideshow figcaption {
 	padding-top: 10px;
 	padding-bottom: 20px;
+	margin: 0;
+	text-align: left;
 	display: flex;
 	align-items: baseline;
 	justify-content: space-between;
@@ -296,7 +307,6 @@
 	text-overflow: ellipsis;
 }
 .gallery-view-mode .slideshow .list-metadata__header a {
-	margin-left: auto;
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;

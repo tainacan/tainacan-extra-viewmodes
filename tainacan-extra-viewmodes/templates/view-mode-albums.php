@@ -1,6 +1,6 @@
 <?php if (have_posts()):  ?>
 
-    <div class="tainacan-albums-container">
+    <div class="tainacan-albums-container bootstrap-wrapper">
 
         <div class="row no-gutters">
         <?php while (have_posts()): the_post(); ?>
@@ -11,7 +11,7 @@
                         <?php if ( has_post_thumbnail() ): ?>
                             <?php the_post_thumbnail('tainacan-medium'); ?> 
                         <?php else: ?>
-                            <?php echo '<img alt="Thumbnail placeholder" src="'.get_stylesheet_directory_uri().'/assets/images/thumbnail_placeholder.png">'?>
+                            <?php echo '<img alt="Thumbnail placeholder" src="' . plugins_url('', __FILE__ ) . '/thumbnail_placeholder.png">'?>
                         <?php endif; ?>  
                     </a>
                     <a href="<?php the_permalink(); ?>">
@@ -25,7 +25,7 @@
     </div>
 
 <?php else: ?>
-    <div class="tainacan-albums-container">
+    <div class="tainacan-albums-container bootstrap-wrapper">
         <section class="section">
             <div class="content has-text-gray4 has-text-centered">
                 <p>

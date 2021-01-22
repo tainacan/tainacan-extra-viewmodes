@@ -1,10 +1,10 @@
 <?php if (have_posts()):  ?>
 
-    <div class="tainacan-books-container">
+    <div class="tainacan-books-container bootstrap-wrapper">
 
         <div class="row no-gutters">
         <?php while (have_posts()): the_post(); ?>
-            <div class="col col-sm-12 col-md-6 col-lg-4 col-xl-3">
+            <div class="col col-12 col-sm-12 col-md-6 col-lg-4 col-xl-3">
                 <div class="tainacan-book" style="background-image: url('<?php 
                  if ( has_post_thumbnail() ) {
                     echo esc_url(the_post_thumbnail_url('tainacan-medium-full'));
@@ -16,7 +16,7 @@
                         <?php if ( has_post_thumbnail() ): ?>
                             <?php the_post_thumbnail('tainacan-medium-full'); ?> 
                         <?php else: ?>
-                            <?php echo '<img alt="Thumbnail placeholder" src="'.get_stylesheet_directory_uri().'/assets/images/thumbnail_placeholder.png">'?>
+                            <?php echo '<img alt="Thumbnail placeholder" src="' . plugins_url('', __FILE__ ) . '/thumbnail_placeholder.png">'?>
                         <?php endif; ?>  
                     </a>
                     <a href="<?php the_permalink(); ?>">
@@ -30,7 +30,7 @@
     </div>
 
 <?php else: ?>
-    <div class="tainacan-books-container">
+    <div class="tainacan-books-container bootstrap-wrapper">
         <section class="section">
             <div class="content has-text-gray4 has-text-centered">
                 <p>
