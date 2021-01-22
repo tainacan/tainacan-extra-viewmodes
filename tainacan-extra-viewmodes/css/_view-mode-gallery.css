@@ -23,6 +23,7 @@
 .gallery-view-mode.grid-gallery figcaption {
 	margin: 0;
 	text-align: left;
+	font-size: 1em;
 }
 
 .gallery-view-mode.grid-gallery figcaption h3 {
@@ -305,6 +306,7 @@
 	white-space: nowrap;
 	overflow: hidden;
 	text-overflow: ellipsis;
+	font-size: 1em;
 }
 .gallery-view-mode .slideshow .list-metadata__header a {
 	white-space: nowrap;

@@ -75,11 +75,11 @@
 .tainacan-albums-container .tainacan-album .metadata-title {
     flex-shrink: 0;
     border-radius: 5px;
-    font-size: 0.875rem;
+    font-size: 0.875em;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    padding: 0.5rem;
+    padding: 0.5em;
     text-align: center;
     position: relative;
     opacity: 0;
