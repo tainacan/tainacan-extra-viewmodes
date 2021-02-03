@@ -5,7 +5,7 @@ Tags: museums, libraries, archives, GLAM, collections, repository, tainacan, vie
 Requires at least: 4.8
 Tested up to: 5.6
 Requires PHP: 5.6
-Stable tag: 0.0.1
+Stable tag: 0.0.2
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -68,8 +68,11 @@ This plugin will only work with [Tainacan plugin](https://wordpress.org/plugins/
 
 == Changelog ==
 
+= 0.0.2 =
+* First release on the WordPress.org plugins repository
+
 = 0.0.1 =
-* First release of the Tainacan Extra View Modes plugin
+* Test release of the Tainacan Extra View Modes plugin
 
 == Screenshots ==
  
