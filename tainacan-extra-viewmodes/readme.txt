@@ -66,6 +66,36 @@ This plugin will only work with [Tainacan plugin](https://wordpress.org/plugins/
 * Check our documentation Wiki: [https://wiki.tainacan.org/](https://wiki.tainacan.org/)
 * Source code on GitHub: [https://github.com/tainacan/tainacan-extra-viewmodes](https://github.com/tainacan/tainacan-extra-viewmodes)
 
+
+== Copyright ==
+
+Tainacan Extra View Modes plugin, Copyright 2021 Tainacan.org
+Tainacan Extra View Modes plugin is distributed under the terms of the GNU GPLv3
+License details: https://github.com/tainacan/tainacan-extra-viewmodes/blob/master/LICENSE
+
+Tainacan Extra View Modes plugin bundles the following third-party resources:
+
+Modernizr 3.11.0 Copyright 2021 The Modernizr Team
+Licenses: MIT
+Source: https://github.com/Modernizr/
+
+imagesLoaded Copyright 2021 David DeSandro
+Licenses: MIT
+Source: https://github.com/desandro/imagesloaded
+
+Masonry 4.2.2 Copyright 2021 David DeSandro
+Licenses: MIT
+Source: https://github.com/desandro/masonry
+
+Classie 1.0.1 Copyright 2021 David DeSandro
+Licenses: MIT
+Source: https://github.com/desandro/classie
+
+cbpGridGallery.js 1.0.0 Copyright 2014 Codrops
+Licenses: MIT
+Source: https://tympanus.net/codrops/2014/03/21/google-grid-gallery/
+
+
 == Changelog ==
 
 = 0.0.2 =
@@ -75,7 +105,6 @@ This plugin will only work with [Tainacan plugin](https://wordpress.org/plugins/
 * Test release of the Tainacan Extra View Modes plugin
 
 == Screenshots ==
- 
 
 1. Gallery - A masonry view mode that displays two metadata and opens a slider lightbox.
 2. Gallery - A masonry view mode that displays two metadata and opens a slider lightbox (lightbox opened).
