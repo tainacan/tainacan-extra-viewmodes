@@ -5,19 +5,23 @@
 }
 .tainacan-polaroid-container .row { justify-content: space-around; }
 .tainacan-polaroid-container .col { 
-    flex-grow: 0; 
+    flex-grow: 0;
+    transition: transform 0.2s ease;
 }
 .tainacan-polaroid-container .col:nth-of-type(odd) {
-    transform: rotate(0.5deg);    
+    transform: rotate(0.35deg) scale(1.0);    
 }
 .tainacan-polaroid-container .col:nth-of-type(even) {
-    transform: rotate(-1.0deg);    
+    transform: rotate(-0.75deg) scale(1.0);
 }
 .tainacan-polaroid-container .col:nth-of-type(3n+0) {
-    transform: rotate(1.0deg);    
+    transform: rotate(0.75deg) scale(1.0);
 }
 .tainacan-polaroid-container .col:nth-of-type(7n+0) {
-    transform: rotate(-0.5deg);    
+    transform: rotate(-0.35deg) scale(1.0);
+}
+.tainacan-polaroid-container .col:hover { 
+    transform: rotate(0deg) scale(1.05);
 }
 
 .tainacan-polaroid-container .tainacan-polaroid {
@@ -72,6 +76,7 @@
     white-space: nowrap;
     overflow: hidden;
     max-width: 260px;
+    margin-bottom: 0.5rem;
 }
 
 .tainacan-polaroid-container .metadata-value .tainacan-compound-group {

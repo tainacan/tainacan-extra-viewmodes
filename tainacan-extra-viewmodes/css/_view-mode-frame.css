@@ -61,7 +61,7 @@
     flex-shrink: 0;
     font-size: 0.875em;
     text-overflow: ellipsis;
-    white-space: nowrap;
+    white-space: normal;
     overflow: hidden;
     padding: 0.5em 0.75em;
     text-align: center;

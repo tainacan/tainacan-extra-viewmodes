@@ -4,6 +4,9 @@ This repo contains a plugin that registers a list of 8 Extra View Modes for Tain
 
 ## The Extra View Modes
 
+Gallery
+: A masonry view mode that displays two metadata and opens a slider lightbox.
+
 Mosaic
 : A simple and marginless mosaic of item thumbnails.
 
@@ -13,20 +16,17 @@ Frame
 Exhibition
 : A framed record view, where image and metadata are expanded on hover.
 
+Albums
+: Thumbnails displayed as album covers with a disk inside.
+
+Document
+: Records with stacked papers style, for displaying published research.
+
 Books
 : A book cover view, made for library visualizations.
 
 Polaroid
 : A framed picture view, similar to polaroid photographs.
-
-Document
-: Records with stacked papers style, for displaying published research.
-
-Albums
-: Thumbnails displayed as album covers with a disk inside.
-
-Gallery
-: A masonry view mode that displays two metadata and opens a slider lightbox.
 
 ## Installation
 
