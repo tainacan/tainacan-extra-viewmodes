@@ -3,9 +3,9 @@ Author: tainacan
 Contributors: wetah, vnmedeiros, leogermani, tainacan
 Tags: museums, libraries, archives, GLAM, collections, repository, tainacan, view modes
 Requires at least: 4.8
-Tested up to: 5.6
+Tested up to: 5.7
 Requires PHP: 5.6
-Stable tag: 0.0.2
+Stable tag: 0.0.3
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -98,7 +98,7 @@ Source: https://tympanus.net/codrops/2014/03/21/google-grid-gallery/
 
 == Changelog ==
 
-= 0.0.2 =
+= 0.0.3 =
 * First release on the WordPress.org plugins repository
 
 = 0.0.1 =
