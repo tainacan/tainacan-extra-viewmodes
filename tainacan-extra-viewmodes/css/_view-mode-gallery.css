@@ -36,7 +36,7 @@
 .gallery-view-mode.grid-gallery figcaption p {
 	font-size: 0.8125em;
 	margin: 0;
-	color: var(--tainacan-info-color, #555758);
+	color: var(--tainacan-info-color, #505253);
 }
 
 /* Grid style */
@@ -206,7 +206,7 @@
 .gallery-view-mode .slideshow nav span {
 	position: fixed;
 	z-index: 1000;
-	color: var(--tainacan-secondary, #298596);
+	color: var(--tainacan-secondary, #187181);
 	text-align: center;
 	padding: 3%;
 	cursor: pointer;

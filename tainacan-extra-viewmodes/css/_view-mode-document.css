@@ -95,18 +95,18 @@
 }
 
 .tainacan-document-container .tainacan-document .media .media-body .metadata-value .multivalue-separator {
-    color: #cbcbcb;
+    color: #a5a5a5;
     margin: 0 8px;    
 }
 .tainacan-document-container .tainacan-document .media .media-body .metadata-value .hierarchy-separator {
-    color: #cbcbcb;  
+    color: #a5a5a5;  
 }
 .tainacan-document-container .tainacan-document .media .media-body .metadata-value .metadata-type-compound .multivalue-separator,
 .tainacan-document-container .tainacan-document .media .media-body .metadata-value .metadata-type-textarea .multivalue-separator {
     display: block;
     max-height: 1px;
     width: 35px;
-    background: #cbcbcb;
+    background: #a5a5a5;
     content: none;
     color: transparent;
     margin: 0.875em auto;
