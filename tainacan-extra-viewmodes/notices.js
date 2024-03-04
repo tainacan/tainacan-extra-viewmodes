@@ -1,12 +1,12 @@
 // Checks if document is loaded
-const performWhenDocumentIsLoaded = callback => {
+const tainacanExtraViewModesPerformWhenDocumentIsLoaded = callback => {
     if (/comp|inter|loaded/.test(document.readyState))
         cb();
     else
         document.addEventListener('DOMContentLoaded', callback, false);
 }
 
-performWhenDocumentIsLoaded(function() {
+tainacanExtraViewModesPerformWhenDocumentIsLoaded(function() {
     setTimeout(function() {
         const notificationDismiss = document.querySelector('#tainacan-extra-viewmodes-plugin-deprecation-notification .notice-dismiss');
     
