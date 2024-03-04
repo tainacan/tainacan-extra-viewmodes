@@ -2,10 +2,11 @@
 Author: tainacan
 Contributors: wetah, vnmedeiros, leogermani, tainacan
 Tags: museums, libraries, archives, GLAM, collections, repository, tainacan, view modes
-Requires at least: 4.8
-Tested up to: 5.7
-Requires PHP: 5.6
-Stable tag: 0.0.3
+Requires at least: 5.9
+Tested up to: 6.4
+Requires PHP: 7.0
+Stable tag: 0.0.4
+Requires Plugins: tainacan
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
@@ -97,6 +98,10 @@ Source: https://tympanus.net/codrops/2014/03/21/google-grid-gallery/
 
 
 == Changelog ==
+
+= 0.0.4 =
+* Migrates Gallery View mode to Vue3 for supporting Tainacan 0.21.0
+* Updates dependencies
 
 = 0.0.3 =
 * First release on the WordPress.org plugins repository

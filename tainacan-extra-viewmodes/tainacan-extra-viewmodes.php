@@ -139,4 +139,42 @@ function tainacan_extra_viewmodes_enqueue_styles() {
 	wp_enqueue_style( 'tainacan-extra-viewmodes-bootstrap-grid-only',  	$baseurl . '/css/bootstrap-grid-only.min.css', [], TAINACAN_EXTRA_VIEWMODES_PLUGIN_VERSION );
 };
 
+/* Logics for the update warning */
+function tainacan_extra_viewmodes_plugin_enqueue_admin_scripts() {
+    wp_enqueue_script( 'tainacan-extra-viewmodes-plugin-notices', plugin_dir_url(__FILE__) . 'notices.js', array(), TAINACAN_EXTRA_VIEWMODES_PLUGIN_VERSION, true );
+}
+add_action("admin_enqueue_scripts", "tainacan_extra_viewmodes_plugin_enqueue_admin_scripts");
+
+function tainacan_extra_viewmodes_plugin_dismiss_notification() {
+    set_transient( 'tainacan_extra_viewmodes_plugin_notification_dismissed', true );
+    wp_die();
+}
+add_action( 'wp_ajax_dismiss_notification', 'tainacan_extra_viewmodes_plugin_dismiss_notification' );
+
+/* Adds warning for updating to Tainacan core version 0.21.0 on */
+function tainacan_extra_viewmodes_plugin_deprecation_warning() {
+
+    $screen = get_current_screen();
+    
+    if ( $screen->id !== 'plugins' )
+        return;
+
+    if ( null === TAINACAN_VERSION )
+        return;
+
+	if ( version_compare(TAINACAN_VERSION, '0.21.0', '>=') )
+		return;
+
+    if ( get_transient( 'tainacan_extra_viewmodes_plugin_notification_dismissed' ) )
+        return;
+
+    echo '<div id="tainacan-extra-viewmodes-plugin-deprecation-notification" class="notice notice-warning is-dismissible"><p>';
+
+    echo __('Please update your Tainacan plugin to a version greater than or equal to 0.21.0 in order to use "Tainacan Extra View Modes".', 'tainacan-extra-viewmodes');
+
+    echo '</p></div>';
+
+}
+add_action('admin_notices', 'tainacan_extra_viewmodes_plugin_deprecation_warning');
+
 ?>

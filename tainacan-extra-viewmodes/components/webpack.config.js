@@ -1,8 +1,9 @@
 let path = require("path");
 let webpack = require("webpack");
-const VueLoaderPlugin = require("vue-loader/lib/plugin");
+const { VueLoaderPlugin } = require("vue-loader");
 
 module.exports = {
+  mode: "development",
   output: {
     path: path.resolve(__dirname, ""),
     filename: "gallery-view-mode.bundle.js",
@@ -11,16 +12,13 @@ module.exports = {
     rules: [
       {
         test: /\.vue$/,
-        loader: "vue-loader",
+        loader: "vue-loader"
       },
       {
         test: /\.js$/,
         loader: "babel-loader",
       }
     ],
-  },
-  node: {
-    fs: 'empty'
   },
   plugins: [new VueLoaderPlugin()]
 };

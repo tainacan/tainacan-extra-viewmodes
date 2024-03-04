@@ -404,3 +404,49 @@
 		width: 100%;
 	}
 }
+
+.tainacan-masonry-container--skeleton {
+    display: block;
+    min-height: 50vh;
+    padding-left: 25px;
+    padding-right: 25px;
+    column-gap: 25px;
+    height: auto !important;
+    column-count: 7;
+}
+.tainacan-masonry-container--skeleton .skeleton {
+    width: 100%;
+    margin-bottom: 25px;
+    break-inside: avoid;
+}
+
+@media screen and (max-width: 2560px) {
+    .tainacan-masonry-container--skeleton {
+        column-count: 6; 
+    }
+}   
+@media screen and (max-width: 1920px) {
+    .tainacan-masonry-container--skeleton {
+        column-count: 5; 
+    }
+}
+@media screen and (max-width: 1740px) {
+    .tainacan-masonry-container--skeleton {
+        column-count: 4; 
+    }
+}
+@media screen and (max-width: 1440px) {
+    .tainacan-masonry-container--skeleton {
+        column-count: 3; 
+    }
+}
+@media screen and (max-width: 1024px) {
+    .tainacan-masonry-container--skeleton {
+        column-count: 2; 
+    }
+}
+@media screen and (max-width: 620px) {
+    .tainacan-masonry-container--skeleton {
+        column-count: 1; 
+    }
+}

@@ -1,6 +1,5 @@
 <template>
     <div 
-            ref="grid-gallery"
             id="grid-gallery" 
             class="gallery-view-mode grid-gallery">
 
@@ -20,17 +19,15 @@
             </section>
 
             <!-- SKELETON LOADING -->
-            <masonry
+            <div
                     v-if="isLoading"
-                    :cols="masonryCols"
-                    :gutter="24"
-                    class="tainacan-masonry-container">
+                    class="tainacan-masonry-container--skeleton">
                 <div 
                         :key="item"
                         v-for="item in 12"
                         :style="{'min-height': randomHeightForMasonryItem() + 'px' }"
-                        class="skeleton tainacan-masonry-item" />
-            </masonry>
+                        class="skeleton" />
+            </div>
 
             <ul class="grid">
 
@@ -43,11 +40,13 @@
                             :src="item['thumbnail']['tainacan-medium-full'] ? item['thumbnail']['tainacan-medium-full'][0] : (item['thumbnail'].medium ? item['thumbnail'].medium[0] : thumbPlaceholderPath)">  
                         <figcaption>
                             <h3>
-                                <span 
+                                <template 
                                         v-for="(column, metadatumIndex) in displayedMetadata"
-                                        :key="metadatumIndex"
-                                        v-if="column.display && column.metadata_type_object != undefined && (column.metadata_type_object.related_mapped_prop == 'title')"
-                                        v-html="item.metadata != undefined && collectionId ? renderMetadata(item.metadata, column) : (item.title ? item.title :`<span class='has-text-gray3 is-italic'>` + $i18n.get('label_value_not_provided') + `</span>`)" />   
+                                        :key="metadatumIndex">
+                                    <span 
+                                            v-if="column.display && column.metadata_type_object != undefined && (column.metadata_type_object.related_mapped_prop == 'title')"
+                                            v-html="item.metadata != undefined && collectionId ? renderMetadata(item.metadata, column) : (item.title ? item.title :`<span class='has-text-gray3 is-italic'>` + $i18n.get('label_value_not_provided') + `</span>`)" />   
+                                </template>
                             </h3>
                             <div>
                                 <p v-html="renderTheSecondaryMetadata(item)" />   
@@ -60,15 +59,17 @@
 
         <section class="slideshow">
             <ul>
-                <li v-for="(item, index) of items" :key="index">
+                <li v-for="(item, index) of items" :key="item.id">
                     <figure>
                         <figcaption>
                             <h3>
-                                <span 
+                                <template 
                                         v-for="(column, metadatumIndex) in displayedMetadata"
-                                        :key="metadatumIndex"
-                                        v-if="column.display && column.metadata_type_object != undefined && (column.metadata_type_object.related_mapped_prop == 'title')"
-                                        v-html="item.metadata != undefined && collectionId ? renderMetadata(item.metadata, column) : (item.title ? item.title :`<span class='has-text-gray3 is-italic'>` + $i18n.get('label_value_not_provided') + `</span>`)" />   
+                                        :key="metadatumIndex">
+                                    <span 
+                                            v-if="column.display && column.metadata_type_object != undefined && (column.metadata_type_object.related_mapped_prop == 'title')"
+                                            v-html="item.metadata != undefined && collectionId ? renderMetadata(item.metadata, column) : (item.title ? item.title :`<span class='has-text-gray3 is-italic'>` + $i18n.get('label_value_not_provided') + `</span>`)" />
+                                </template>
                             </h3>
                             <a target="_blank" :href="getItemLink(item.url, index)">
                                 <span>{{ __('View item on page', 'tainacan-extra-viewmodes') }}</span>
@@ -103,16 +104,18 @@
                                 </span>
                             </a>
                         </div>
-                        <span 
+                        <template 
                                 v-for="(column, metadatumIndex) in displayedMetadata"
-                                :key="metadatumIndex"
-                                :class="{ 'metadata-type-textarea': column.metadata_type_object.component == 'tainacan-textarea' }"
-                                v-if="renderMetadata(item.metadata, column) != '' && column.display && column.slug != 'thumbnail' && column.metadata_type_object != undefined && (column.metadata_type_object.related_mapped_prop != 'title')">
-                            <h3 class="metadata-label">{{ column.name }}</h3>
-                            <p      
-                                    v-html="renderMetadata(item.metadata, column)"
-                                    class="metadata-value"/>
-                        </span>
+                                :key="metadatumIndex">
+                            <span 
+                                    :class="{ 'metadata-type-textarea': column.metadata_type_object.component == 'tainacan-textarea' }"
+                                    v-if="renderMetadata(item.metadata, column) != '' && column.display && column.slug != 'thumbnail' && column.metadata_type_object != undefined && (column.metadata_type_object.related_mapped_prop != 'title')">
+                                <h3 class="metadata-label">{{ column.name }}</h3>
+                                <p      
+                                        v-html="renderMetadata(item.metadata, column)"
+                                        class="metadata-value"/>
+                            </span>
+                        </template>
                     </div>
                 </li>
             </ul>
@@ -136,11 +139,12 @@ export default {
             thumbPlaceholderPath: tainacan_plugin.base_url + '/assets/images/placeholder_square.png',
             isSlideshowViewModeEnabled: false,
             showMetadataPanel: false,
-            masonryCols: { default: 7, 1600: 6, 1400: 5, 1200: 4, 960: 3, 560: 2, 344: 1 }
+            CBPGridGalleryObject: null
         }
     },
     props: {
-        collectionId: Number,
+        collectionId: [Number,String],
+        termId: [Number,String],
         displayedMetadata: Array,
         items:  {
             type: Array,
@@ -163,16 +167,19 @@ export default {
         },
         isLoading: {
             handler(value) {
-                if (!value && this.$refs['grid-gallery']) {
+                const galleryElement = document.getElementById('grid-gallery');
+                if (!value && galleryElement) {
                     
                     // Resets current
                     if (Masonry.currentMasonryInstance)
                         Masonry.currentMasonryInstance.destroy();
 
                     this.showMetadataPanel = false;
-                    
-                    new CBPGridGallery( this.$refs['grid-gallery']);
 
+                    if ( this.CBPGridGalleryObject === null )
+                        this.CBPGridGalleryObject = new CBPGridGallery( galleryElement );
+                    else
+                        this.CBPGridGalleryObject._init(galleryElement);
                 }
             },
             immediate: true
@@ -200,7 +207,7 @@ export default {
             if (this.queries) {
                 // Inserts information necessary for item by item navigation on single pages
                 this.queries['pos'] = ((this.queries['paged'] - 1) * this.queries['perpage']) + index;
-                this.queries['source_list'] = this.$root.termId ? 'term' : (!this.$root.collectionId || this.$root.collectionId == 'default' ? 'repository' : 'collection');
+                this.queries['source_list'] = this.termId ? 'term' : (!this.collectionId || this.collectionId == 'default' ? 'repository' : 'collection');
                 this.queries['ref'] = this.$route.path;
                 return itemUrl + '?' + qs.stringify(this.queries);
             }
@@ -228,8 +235,8 @@ export default {
 
             return Math.floor(Math.random()*(max-min+1)+min);
         },
-        starSlideshowFromHere(index) {
-            this.$router.replace({ query: {...this.$route.query, ...{'slideshow-from': index } }}).catch((error) => this.$console.log(error));
+        async starSlideshowFromHere(index) {
+            await this.$router.replace({ query: {...this.$route.query, ...{'slideshow-from': index } }}).catch((error) => this.$console.log(error));
         }
     },
     beforeDestroy() {
