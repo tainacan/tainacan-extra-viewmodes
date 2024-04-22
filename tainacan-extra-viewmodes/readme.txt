@@ -70,7 +70,7 @@ This plugin will only work with [Tainacan plugin](https://wordpress.org/plugins/
 
 == Copyright ==
 
-Tainacan Extra View Modes plugin, Copyright 2021 Tainacan.org
+Tainacan Extra View Modes plugin, Copyright 2024 Tainacan.org
 Tainacan Extra View Modes plugin is distributed under the terms of the GNU GPLv3
 License details: https://github.com/tainacan/tainacan-extra-viewmodes/blob/master/LICENSE
 

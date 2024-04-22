@@ -121,7 +121,7 @@ function tainacan_extra_viewmodes_register_components($helper) {
  * Template view modes have their style separated from the php file
  * so we enqueue them here.
  */
-add_action( 'wp_print_scripts', 'tainacan_extra_viewmodes_enqueue_styles' );
+add_action( 'wp_enqueue_scripts', 'tainacan_extra_viewmodes_enqueue_styles' );
 function tainacan_extra_viewmodes_enqueue_styles() {
 	
 	// Enqueue template view mode styles
@@ -159,7 +159,7 @@ function tainacan_extra_viewmodes_plugin_deprecation_warning() {
     if ( $screen->id !== 'plugins' )
         return;
 
-    if ( null === TAINACAN_VERSION )
+    if ( !defined( 'TAINACAN_VERSION' ) )
         return;
 
 	if ( version_compare(TAINACAN_VERSION, '0.21.0', '>=') )
