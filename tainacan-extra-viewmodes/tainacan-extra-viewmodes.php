@@ -4,14 +4,14 @@ Plugin Name: Tainacan Extra View Modes
 Plugin URI: https://tainacan.org/new
 Description: Adds extra viewmodes to be used by your theme
 Author: tainacan
-Version: 0.0.4
+Version: 0.0.5
 Text Domain: tainacan-extra-viewmodes
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 */
 
 /** Plugin version */
-const TAINACAN_EXTRA_VIEWMODES_PLUGIN_VERSION = '0.0.4';
+const TAINACAN_EXTRA_VIEWMODES_PLUGIN_VERSION = '0.0.5';
 
 /**
  * Here we regster the new view modes using the Tainacan plugin
@@ -24,7 +24,7 @@ function tainacan_extra_viewmodes_register_templates() {
 	if ( function_exists( 'tainacan_register_view_mode' ) ) {
 
 		// Registering the view modes
-		tainacan_register_view_mode('mosaic', [
+		tainacan_register_view_mode('mosaic-legacy', [
 			'label' 			=> 'Mosaic',
 			'description' 		=> __('A simple and marginless mosaic of item thumbnails.', 'tainacan-extra-viewmodes'),
 			'icon' 				=> '<span class="icon"><i><svg fill="var(--tainacan-info-color, #505253)" xmlns="http://www.w3.org/2000/svg" height="24" width="24" viewBox="-2 -2 48 48"><path d="M24.981 7.464H4.898c-.758 0-1.372.615-1.372 1.373v14.816c0 .758.615 1.373 1.372 1.373h20.084c.758 0 1.373-.615 1.373-1.373V8.838c0-.76-.615-1.374-1.374-1.374zM29.183 15.527h7.927c.758 0 1.373-.615 1.373-1.374h-.001V8.838c0-.76-.614-1.373-1.373-1.373h-7.926c-.757 0-1.372.614-1.372 1.373v5.315c0 .76.615 1.374 1.372 1.374zM38.482 18.336c0-.758-.614-1.373-1.373-1.373h-7.926c-.757 0-1.372.615-1.372 1.373v5.317c0 .758.615 1.373 1.372 1.373h7.927c.758 0 1.373-.615 1.373-1.373h-.001zM38.481 27.847c0-.759-.613-1.373-1.373-1.373h-7.925c-.757 0-1.373.614-1.373 1.373v5.316c0 .758.616 1.373 1.373 1.373h7.927c.758 0 1.373-.615 1.373-1.373h-.002zM24.962 26.473h-7.926c-.758 0-1.373.615-1.373 1.373v5.316c0 .759.615 1.373 1.373 1.373h7.926c.759 0 1.373-.614 1.373-1.373v-5.315c0-.759-.613-1.374-1.373-1.374zM12.815 26.473H4.89c-.758 0-1.373.615-1.373 1.373v5.316c0 .759.615 1.373 1.373 1.373h7.925c.76 0 1.374-.614 1.374-1.373v-5.315c0-.759-.615-1.374-1.374-1.374z"/></svg></i></span>',

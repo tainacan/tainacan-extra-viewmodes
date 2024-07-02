@@ -190,7 +190,7 @@ export default {
             return wp.i18n ? wp.i18n.__ : ((str, ctx) => str)
         },
         queries() {
-            let currentQueries = JSON.parse(JSON.stringify(this.$route.query));
+            let currentQueries = (this.$route && this.$route.query) ? JSON.parse(JSON.stringify(this.$route.query)) : {};
             if (currentQueries) {
                 delete currentQueries['view_mode'];
                 delete currentQueries['fetch_only'];
@@ -208,7 +208,8 @@ export default {
                 // Inserts information necessary for item by item navigation on single pages
                 this.queries['pos'] = ((this.queries['paged'] - 1) * this.queries['perpage']) + index;
                 this.queries['source_list'] = this.termId ? 'term' : (!this.collectionId || this.collectionId == 'default' ? 'repository' : 'collection');
-                this.queries['ref'] = this.$route.path;
+                if ( this.$route && this.$route.path )
+                    this.queries['ref'] = this.$route.path;
                 return itemUrl + '?' + qs.stringify(this.queries);
             }
             return itemUrl;
@@ -236,7 +237,8 @@ export default {
             return Math.floor(Math.random()*(max-min+1)+min);
         },
         async starSlideshowFromHere(index) {
-            await this.$router.replace({ query: {...this.$route.query, ...{'slideshow-from': index } }}).catch((error) => this.$console.log(error));
+            if ( this.$router && this.$route && this.$route.query )
+                await this.$router.replace({ query: {...this.$route.query, ...{'slideshow-from': index } }}).catch((error) => this.$console.log(error));
         }
     },
     beforeDestroy() {

@@ -1,11 +1,11 @@
 === Tainacan Extra View Modes ===
 Author: tainacan
 Contributors: wetah, vnmedeiros, leogermani, tainacan
-Tags: museums, libraries, archives, GLAM, collections, repository, tainacan, view modes
+Tags: museums, archives, repository, tainacan, view modes
 Requires at least: 5.9
 Tested up to: 6.5
 Requires PHP: 7.0
-Stable tag: 0.0.4
+Stable tag: 0.0.5
 Requires Plugins: tainacan
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -98,6 +98,9 @@ Source: https://tympanus.net/codrops/2014/03/21/google-grid-gallery/
 
 
 == Changelog ==
+
+= 0.0.5 =
+* Renames mosaic slug to mosaic-legacy to avoid conflicts with Tainacan 0.21.7 oficial new mosaic view mode
 
 = 0.0.4 =
 * Migrates Gallery View mode to Vue3 for supporting Tainacan 0.21.0
