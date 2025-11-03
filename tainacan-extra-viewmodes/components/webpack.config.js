@@ -3,6 +3,7 @@ let webpack = require("webpack");
 const { VueLoaderPlugin } = require("vue-loader");
 
 module.exports = {
+  entry: "./gallery-view-mode.js",
   mode: "development",
   output: {
     path: path.resolve(__dirname, ""),

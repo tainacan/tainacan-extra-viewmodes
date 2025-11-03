@@ -204,7 +204,12 @@ export default {
     },
     methods: {
         getItemLink(itemUrl, index) {
-            if (this.queries) {
+            // Check if query parameters should be included based on the setting
+            const enableQueryParams = (typeof tainacan_blocks !== 'undefined' && tainacan_blocks.enable_item_link_query_params !== undefined) 
+                ? tainacan_blocks.enable_item_link_query_params 
+                : true; // Default to true to maintain current behavior
+
+            if (this.queries && enableQueryParams) {
                 // Inserts information necessary for item by item navigation on single pages
                 this.queries['pos'] = ((this.queries['paged'] - 1) * this.queries['perpage']) + index;
                 this.queries['source_list'] = this.termId ? 'term' : (!this.collectionId || this.collectionId == 'default' ? 'repository' : 'collection');
