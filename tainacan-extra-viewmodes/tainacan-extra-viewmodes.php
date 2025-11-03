@@ -86,23 +86,35 @@ function tainacan_extra_viewmodes_register_components($helper) {
 
     if ( function_exists( 'tainacan_register_view_mode' ) ) {
 		
-		// Enqueues necessary third party or modified libraries to this view mode
-		$baseurl =  plugin_dir_url(__FILE__);
-		wp_register_script('modernizr_custom', 	$baseurl . 'vendor/modernizr.custom.js', 	[], TAINACAN_EXTRA_VIEWMODES_PLUGIN_VERSION, false);
-		wp_enqueue_script('modernizr_custom');
-		wp_register_script('imagesloaded', 		$baseurl . 'vendor/imagesloaded.pkgd.js', 	[], TAINACAN_EXTRA_VIEWMODES_PLUGIN_VERSION, true);
-		wp_enqueue_script('imagesloaded');
-		wp_register_script('masonry', 			$baseurl . 'vendor/masonry.pkgd.js', 		[], TAINACAN_EXTRA_VIEWMODES_PLUGIN_VERSION, true);
-		wp_enqueue_script('masonry');
-		wp_register_script('classie',	 		$baseurl . 'vendor/classie.js', 			[], TAINACAN_EXTRA_VIEWMODES_PLUGIN_VERSION, true);
-		wp_enqueue_script('classie');
-		wp_register_script('cbpGridGallery', 	$baseurl . 'vendor/cbpGridGallery.js', 		[], TAINACAN_EXTRA_VIEWMODES_PLUGIN_VERSION, true);
-		wp_enqueue_script('cbpGridGallery');
+		$should_enqueue_gallery = true;
+		
+		// From Tainacan 1.0.0 on, check if gallery view mode is enabled before enqueuing assets
+		if ( defined( 'TAINACAN_VERSION' ) && version_compare( TAINACAN_VERSION, '1.0.0', '>=' ) ) {
+			if ( class_exists( '\Tainacan\Theme_Helper' ) ) {
+				$enabled_view_modes = \Tainacan\Theme_Helper::get_instance()->get_enabled_view_modes();
+				$should_enqueue_gallery = in_array( 'gallery', $enabled_view_modes );
+			}
+		}
+		
+		if ( $should_enqueue_gallery ) {
+			// Enqueues necessary third party or modified libraries to this view mode
+			$baseurl =  plugin_dir_url(__FILE__);
+			wp_register_script('modernizr_custom', 	$baseurl . 'vendor/modernizr.custom.js', 	[], TAINACAN_EXTRA_VIEWMODES_PLUGIN_VERSION, false);
+			wp_enqueue_script('modernizr_custom');
+			wp_register_script('imagesloaded', 		$baseurl . 'vendor/imagesloaded.pkgd.js', 	[], TAINACAN_EXTRA_VIEWMODES_PLUGIN_VERSION, true);
+			wp_enqueue_script('imagesloaded');
+			wp_register_script('masonry', 			$baseurl . 'vendor/masonry.pkgd.js', 		[], TAINACAN_EXTRA_VIEWMODES_PLUGIN_VERSION, true);
+			wp_enqueue_script('masonry');
+			wp_register_script('classie',	 		$baseurl . 'vendor/classie.js', 			[], TAINACAN_EXTRA_VIEWMODES_PLUGIN_VERSION, true);
+			wp_enqueue_script('classie');
+			wp_register_script('cbpGridGallery', 	$baseurl . 'vendor/cbpGridGallery.js', 		[], TAINACAN_EXTRA_VIEWMODES_PLUGIN_VERSION, true);
+			wp_enqueue_script('cbpGridGallery');
 
-        // Registering the Vue Component
-        $handle = 'tainacan-galllery-viewmode';
-        $component_script_url = $baseurl . 'components/gallery-view-mode.bundle.js';
-		$helper->register_vuejs_component($handle, $component_script_url, [ 'public' => true, 'deps' => ['wp-i18n'] ], null, true);
+			// Registering the Vue Component
+			$handle = 'tainacan-galllery-viewmode';
+			$component_script_url = $baseurl . 'components/gallery-view-mode.bundle.js';
+			$helper->register_vuejs_component($handle, $component_script_url, [ 'public' => true, 'deps' => ['wp-i18n'] ], null, true);
+		}
 		
 		// Registering the view mode
         tainacan_register_view_mode('gallery', [
@@ -124,19 +136,50 @@ function tainacan_extra_viewmodes_register_components($helper) {
 add_action( 'wp_enqueue_scripts', 'tainacan_extra_viewmodes_enqueue_styles' );
 function tainacan_extra_viewmodes_enqueue_styles() {
 	
+	$enabled_view_modes = [];
+	$should_enqueue_all = true;
+	
+	// From Tainacan 1.0.0 on, check which view modes are enabled before enqueuing assets
+	if ( defined( 'TAINACAN_VERSION' ) && version_compare( TAINACAN_VERSION, '1.0.0', '>=' ) ) {
+		if ( class_exists( '\Tainacan\Theme_Helper' ) ) {
+			$enabled_view_modes = \Tainacan\Theme_Helper::get_instance()->get_enabled_view_modes();
+			$should_enqueue_all = false;
+		}
+	}
+	
 	// Enqueue template view mode styles
 	$baseurl =  plugins_url('', __FILE__);
-	wp_enqueue_style( 'tainacan-extra-viewmodes-view-mode-mosaic',   	$baseurl . '/css/_view-mode-mosaic.css',	 [], TAINACAN_EXTRA_VIEWMODES_PLUGIN_VERSION );
-	wp_enqueue_style( 'tainacan-extra-viewmodes-view-mode-frame',    	$baseurl . '/css/_view-mode-frame.css',    	 [], TAINACAN_EXTRA_VIEWMODES_PLUGIN_VERSION ); 
-	wp_enqueue_style( 'tainacan-extra-viewmodes-view-mode-exhibition',  $baseurl . '/css/_view-mode-exhibition.css', [], TAINACAN_EXTRA_VIEWMODES_PLUGIN_VERSION ); 
-	wp_enqueue_style( 'tainacan-extra-viewmodes-view-mode-books',    	$baseurl . '/css/_view-mode-books.css',    	 [], TAINACAN_EXTRA_VIEWMODES_PLUGIN_VERSION ); 
-	wp_enqueue_style( 'tainacan-extra-viewmodes-view-mode-polaroid', 	$baseurl . '/css/_view-mode-polaroid.css', 	 [], TAINACAN_EXTRA_VIEWMODES_PLUGIN_VERSION ); 
-	wp_enqueue_style( 'tainacan-extra-viewmodes-view-mode-document', 	$baseurl . '/css/_view-mode-document.css', 	 [], TAINACAN_EXTRA_VIEWMODES_PLUGIN_VERSION ); 
-	wp_enqueue_style( 'tainacan-extra-viewmodes-view-mode-albums',   	$baseurl . '/css/_view-mode-albums.css',   	 [], TAINACAN_EXTRA_VIEWMODES_PLUGIN_VERSION ); 
-	wp_enqueue_style( 'tainacan-extra-viewmodes-view-mode-gallery',  	$baseurl . '/css/_view-mode-gallery.css', 	 [], TAINACAN_EXTRA_VIEWMODES_PLUGIN_VERSION );
+	
+	$view_mode_styles = [
+		'mosaic-legacy' => 'tainacan-extra-viewmodes-view-mode-mosaic',
+		'frame'         => 'tainacan-extra-viewmodes-view-mode-frame',
+		'exhibition'    => 'tainacan-extra-viewmodes-view-mode-exhibition',
+		'books'         => 'tainacan-extra-viewmodes-view-mode-books',
+		'polaroid'      => 'tainacan-extra-viewmodes-view-mode-polaroid',
+		'document'      => 'tainacan-extra-viewmodes-view-mode-document',
+		'albums'        => 'tainacan-extra-viewmodes-view-mode-albums',
+		'gallery'       => 'tainacan-extra-viewmodes-view-mode-gallery',
+	];
+	
+	$enqueue_bootstrap = false;
+	
+	foreach ( $view_mode_styles as $slug => $handle ) {
+		// Enqueue if we should enqueue all OR if this specific view mode is enabled
+		if ( $should_enqueue_all || in_array( $slug, $enabled_view_modes ) ) {
+			$file_name = str_replace( 'tainacan-extra-viewmodes-view-mode-', '_view-mode-', $handle );
+			wp_enqueue_style( $handle, $baseurl . '/css/' . $file_name . '.css', [], TAINACAN_EXTRA_VIEWMODES_PLUGIN_VERSION );
+			
+			// Bootstrap is needed for most template view modes (not gallery)
+			if ( $slug !== 'gallery' ) {
+				$enqueue_bootstrap = true;
+			}
+		}
+	}
 	
 	// Most of the template view modes count on bootstrap grid system
-	wp_enqueue_style( 'tainacan-extra-viewmodes-bootstrap-grid-only',  	$baseurl . '/css/bootstrap-grid-only.min.css', [], TAINACAN_EXTRA_VIEWMODES_PLUGIN_VERSION );
+	if ( $enqueue_bootstrap ) {
+		wp_enqueue_style( 'tainacan-extra-viewmodes-bootstrap-grid-only', $baseurl . '/css/bootstrap-grid-only.min.css', [], TAINACAN_EXTRA_VIEWMODES_PLUGIN_VERSION );
+	}
 };
 
 /* Logics for the update warning */
