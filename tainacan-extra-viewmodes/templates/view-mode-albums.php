@@ -7,11 +7,11 @@
             <div class="col col-sm-12 col-md-6 col-lg-4 col-xl-3">
                 <div class="tainacan-album">
                     <a href="<?php the_permalink(); ?>">              
-                        <div class="cd" style="background-image: url('<?php the_post_thumbnail_url('medium'); ?>')"></div>                          
+                        <div class="cd" style="background-image: url('<?php echo esc_url( get_the_post_thumbnail_url(null, 'medium') ); ?>')"></div>                          
                         <?php if ( has_post_thumbnail() ): ?>
                             <?php the_post_thumbnail('tainacan-medium'); ?> 
                         <?php else: ?>
-                            <?php echo '<img alt="Thumbnail placeholder" src="' . plugins_url('', __FILE__ ) . '/thumbnail_placeholder.png">'?>
+                            <?php echo '<img alt="Thumbnail placeholder" src="' . esc_url( plugins_url('', __FILE__ ) . '/thumbnail_placeholder.png' ) . '">'?>
                         <?php endif; ?>  
                     </a>
                     <a href="<?php the_permalink(); ?>">
@@ -33,7 +33,7 @@
                         <i class="tainacan-icon tainacan-icon-48px tainacan-icon-items"></i>
                     </span>
                 </p>
-                <p><?php echo __('No item found', 'tainacan-extra-viewmodes') ?></p>
+                <p><?php echo esc_html__('No item found', 'tainacan-extra-viewmodes'); ?></p>
             </div>
         </section>
     </div>

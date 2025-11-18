@@ -4,14 +4,14 @@ Plugin Name: Tainacan Extra View Modes
 Plugin URI: https://tainacan.org/new
 Description: Adds extra viewmodes to be used by your theme
 Author: tainacan
-Version: 0.0.5
+Version: 0.0.6
 Text Domain: tainacan-extra-viewmodes
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
 */
 
 /** Plugin version */
-const TAINACAN_EXTRA_VIEWMODES_PLUGIN_VERSION = '0.0.5';
+const TAINACAN_EXTRA_VIEWMODES_PLUGIN_VERSION = '0.0.6';
 
 /**
  * Here we regster the new view modes using the Tainacan plugin
@@ -213,7 +213,7 @@ function tainacan_extra_viewmodes_plugin_deprecation_warning() {
 
     echo '<div id="tainacan-extra-viewmodes-plugin-deprecation-notification" class="notice notice-warning is-dismissible"><p>';
 
-    echo __('Please update your Tainacan plugin to a version greater than or equal to 0.21.0 in order to use "Tainacan Extra View Modes".', 'tainacan-extra-viewmodes');
+    echo esc_html__('Please update your Tainacan plugin to a version greater than or equal to 0.21.0 in order to use "Tainacan Extra View Modes".', 'tainacan-extra-viewmodes');
 
     echo '</p></div>';
 

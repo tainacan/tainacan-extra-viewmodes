@@ -3,9 +3,9 @@ Author: tainacan
 Contributors: wetah, vnmedeiros, leogermani, tainacan
 Tags: museums, archives, repository, tainacan, view modes
 Requires at least: 5.9
-Tested up to: 6.5
+Tested up to: 6.8
 Requires PHP: 7.0
-Stable tag: 0.0.5
+Stable tag: 0.0.6
 Requires Plugins: tainacan
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -98,6 +98,11 @@ Source: https://tympanus.net/codrops/2014/03/21/google-grid-gallery/
 
 
 == Changelog ==
+
+= 0.0.6 =
+* Updates dependencies
+* Adds support for Tainacan 1.0.1 option to disable item query link
+* Escapes strings for security
 
 = 0.0.5 =
 * Renames mosaic slug to mosaic-legacy to avoid conflicts with Tainacan 0.21.7 oficial new mosaic view mode
