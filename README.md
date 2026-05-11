@@ -1,4 +1,5 @@
 # Tainacan Extra View Modes (Demo Plugin)
+[![Project Status: Inactive – The project has reached a stable, usable state but is no longer being actively developed; support/maintenance will be provided as time allows.](https://www.repostatus.org/badges/latest/inactive.svg)](https://www.repostatus.org/#inactive)
 
 This repo contains a plugin that registers a list of 8 Extra View Modes for Tainacan [Tainacan](https://tainacan.org). This source code is also a good example of how to implement [third party view modes](https://tainacan.github.io/tainacan-wiki/#/plugin-extra-view-modes) for Tainacan, which can be learned in the Tainacan Wiki: https://tainacan.github.io/tainacan-wiki/#/dev/extra-view-modes.
 
